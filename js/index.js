@@ -27,7 +27,7 @@ buttons.forEach(button => {
 });
 // ! keyboard logic
 document.addEventListener("keydown", (e) => {
-    const allowed = "1234567890.+-*/"
+    const allowed = "1234567890.+-*/()"
     const key = e.key
      if (output.textContent === "Error") {
             output.textContent = "";
