@@ -1,4 +1,43 @@
-body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 2em;
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-style:hover {
+    cursor: pointer;
+}
+
+.button-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.output-box {
+    height: 50px;
+    border: 2px solid black;
+    width: 127px;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 60px 60px 60px;
+    grid-template-rows: repeat(6,60px);
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    border: 2px solid black;
+    padding: 10px;
 }
