@@ -39,9 +39,6 @@ document.addEventListener("keydown", (e) => {
             output.textContent = eval(output.textContent)
         } catch (error) {
             output.textContent = "Error"
-            setTimeout(() => {
-                output.textContent = ""
-            }, 1000);
         }
     } else if (key === "c" || key === "C") {
         output.textContent = ""
