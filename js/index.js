@@ -3,46 +3,52 @@ const buttons = document.querySelectorAll(".button");
 const output = document.getElementById("output")
 buttons.forEach(button => {
     button.addEventListener("click", function () {
+
+
         const value = button.textContent
-        if (output.textContent === "Error") {
-            output.textContent = "";
+        if (output.value === "Error") {
+            output.value = "";
         } 
          if (value === "C") {
-            output.textContent = ""
+            output.value = ""
         } else if (value === "=") {
             try {
-                output.textContent = eval(output.textContent)
+                output.value = eval(output.value)
             } catch (error) {
-                output.textContent = "Error"
+                output.value = "Error"
             }
         }
         else if (value === "CE") {
-            output.textContent = output.textContent.slice(0, -1)
+            output.value = output.value.slice(0, -1)
         }
         else {
-            output.textContent += button.textContent
+            output.value += value
 
         }
+             
     });
 });
 // ! keyboard logic
 document.addEventListener("keydown", (e) => {
-    const allowed = "1234567890.+-*/()"
+    const allowed = "1234567890.+-*/"
     const key = e.key
-     if (output.textContent === "Error") {
-            output.textContent = "";
+
+     if (output.value === "Error" || output.value ==="undefined") {
+            output.value = "";
         } 
     if (allowed.includes(key)) {
-        output.textContent += key
+        output.value += key
     } else if (key === "Enter") {
+        e.preventDefault();
         try {
-            output.textContent = eval(output.textContent)
+            output.value = eval(output.value)
         } catch (error) {
-            output.textContent = "Error"
+            output.value = "Error"
         }
     } else if (key === "c" || key === "C") {
-        output.textContent = ""
+        output.value = ""
     } else if (key === "Backspace") {
-        output.textContent = output.textContent.slice(0, -1)
+        output.value = output.value.slice(0, -1)
     }
+
 })

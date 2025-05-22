@@ -42,10 +42,10 @@ font-size: 25px;
         "wdth" 100;
 }
 
-.button-style:nth-child(3n-2){
+.button-style:nth-child(7n-6){
     border-left: 1px black solid;
 }
-.button-style:nth-child(-n +3){
+.button-style:nth-child(-n +7){
     border-top: 1px black solid;
 }
 
@@ -53,20 +53,26 @@ font-size: 25px;
 .output-box {
     height: 50px;
     border: 2px solid black;
-    width: 225px;
+    width: 400px;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center; /* changed to center for vertical centering in input */
+    padding: 0 5px;
 }
-
 #output {
     margin: 0;
     margin-right: 2px;
+    border: none;
+    width: 100%;
+    text-align: right;
+    font-size: 20px;
+    font-family: inherit;
+    background: transparent;
 }
 
 .button-group {
     display: grid;
-    grid-template-columns: 60px 60px 60px;
+    grid-template-columns: 60px 60px 60px 60px 60px 60px 60px;
     grid-template-rows: repeat(7, 60px);
     margin: 20px;
 }
