@@ -3,26 +3,25 @@ const buttons = document.querySelectorAll(".button");
 const output = document.getElementById("output")
 buttons.forEach(button => {
     button.addEventListener("click", function () {
-
-
-        const value = button.textContent
+         const number = button.textContent
+        
         if (output.value === "Error") {
             output.value = "";
         } 
-         if (value === "C") {
+         if (number === "C") {
             output.value = ""
-        } else if (value === "=") {
+        } else if (number === "=") {
             try {
                 output.value = eval(output.value)
             } catch (error) {
                 output.value = "Error"
             }
         }
-        else if (value === "CE") {
+        else if (number === "CE") {
             output.value = output.value.slice(0, -1)
         }
         else {
-            output.value += value
+            output.value += number
 
         }
              
